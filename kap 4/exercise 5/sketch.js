@@ -1,7 +1,11 @@
+let x=windowWidth/2
+let y=windowHeight/2
+let d=50
+
 function setup() {
-  createCanvas(400, 400);
+  
 }
 
 function draw() {
-  background(220);
+  circle(x,y,d)
 }
