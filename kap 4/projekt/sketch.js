@@ -1,23 +1,38 @@
 let x
 let y
-let a
-let b
-let d
-let speed
+let speed=1.5
+let a=speed
+let b=0
+let d=20
+// "Katte" variabler
+let kx
+let ky
+let kspeed=2
+let ka=kspeed
+let kb=0
+let kd=20
+let kf=150
 
 function setup() {
   createCanvas(400, 400);
-  x=random(0,width)
-  y=random(0,height)
+  x=random(0,width);
+  y=random(0,height);
+  kx=random(0,width);
+  ky=random(0,height);
 }
 
 function draw() {
   background(220);
-  d=20
-  speed=10
-  a=speed
-  b=0
-  circle(x,y,d)
+  fill(250)
+  x+=speed*a;
+  y+=speed*b;
+  circle(x,y,d);
+  borderCheck();
+  fill(kf)
+  kx+=kspeed*ka;
+  ky+=kspeed*kb;
+  circle(kx,ky,kd)
+  borderCheck1();
 }
 function borderCheck(){
   if (x+d/2>=width ){
@@ -37,11 +52,29 @@ function borderCheck(){
       b=speed
     }
 }
+function borderCheck1(){
+  if (kx+kd/2>=width ){
+    ka=-kspeed
+    kb=kspeed
+    }
+ if (kx-kd/2<=0){
+  ka=kspeed
+  kb=-kspeed
+  }
+ if (ky+kd/2>=height ){
+   ka=-kspeed
+   kb=-kspeed
+ }
+  if (ky-kd/2<=0){
+    ka=kspeed
+    kb=kspeed
+      }
+}
+
 function keyPressed() {
-  if (keyCode === 39) {
+  if (keyCode === DOWN_ARROW) {
     b = speed;
     a = 0;
-    x+=speed
   }
   if (keyCode === UP_ARROW) {
     b = -speed;
@@ -56,4 +89,5 @@ function keyPressed() {
     a = speed;
   }
  }
+ 
  
