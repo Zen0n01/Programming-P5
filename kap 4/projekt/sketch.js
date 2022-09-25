@@ -1,4 +1,5 @@
 // alle "Bordercheck" funktioner kunne have være skrevet smartere hvis jeg brugte ||
+// opgaven er ikke fuldendt, men dette er hvad jeg har nået
 let x
 let y
 let speed=1.5
